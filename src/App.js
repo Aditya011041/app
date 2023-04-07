@@ -1,18 +1,23 @@
-// routes
+import React from "react";
 import Router from "./routes";
-// theme
 import ThemeProvider from './theme';
-// components
 import ThemeSettings from './components/settings';
+import Toggle from "./Toggle";
 
 function App() {
+  const [toggled, setToggled] = React.useState(false);
+
   return (
-    <ThemeProvider>
-      <ThemeSettings>
-        {" "}
-        <Router />{" "}
-      </ThemeSettings>
-    </ThemeProvider>
+    <>
+      <div className="App">
+        <Toggle />
+      </div>
+      <ThemeProvider>
+        <ThemeSettings>
+          <Router />
+        </ThemeSettings>
+      </ThemeProvider>
+    </>
   );
 }
 
